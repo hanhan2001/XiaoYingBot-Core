@@ -14,7 +14,14 @@ public class HelpCommand extends Command {
 
     @Override
     public void execute(CommandSender sender, String[] args) {
+        Xyb.getServer().getCommandManager().getCommands().forEach(command -> {
+            Xyb.getLogger().info("{} &7- &f{}", command.getName(), command.getDescription());
 
-        Xyb.getLogger().info("");
+            if (command.getAlias() == null)
+                return;
+
+            for (String alias : command.getAlias())
+                Xyb.getLogger().info("{} &7- &f{}", alias, command.getDescription());
+        });
     }
 }
