@@ -84,6 +84,11 @@ public class SimpleCommandManager implements CommandManager {
         return null;
     }
 
+    @Override
+    public List<Command> getCommands() {
+        return new ArrayList<>(this.knownCommand.values());
+    }
+
     private String matchCommand(String command) {
         if (command.contains(":"))
             return command;

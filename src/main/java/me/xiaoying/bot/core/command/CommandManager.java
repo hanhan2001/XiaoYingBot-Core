@@ -2,6 +2,8 @@ package me.xiaoying.bot.core.command;
 
 import me.xiaoying.bot.core.plugin.Plugin;
 
+import java.util.List;
+
 /**
  * Command commandMap
  */
@@ -17,4 +19,6 @@ public interface CommandManager {
     boolean dispatch(CommandSender sender, String command);
 
     Command getCommand(String command);
+
+    List<Command> getCommands();
 }
