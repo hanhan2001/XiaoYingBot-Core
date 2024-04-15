@@ -12,7 +12,7 @@ public abstract class Command {
     private List<String> alias;
 
     public Command(String name) {
-        this(name, null, null, null);
+        this(name, "a default command", "/" + name, null);
     }
 
     public Command(String name, String description, String usage, List<String> alias) {
